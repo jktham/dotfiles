@@ -1,14 +1,27 @@
-#
-# wm independent hotkeys
-#
+# desktop scroll
+super + button4
+	bspc desktop prev -f
+super + button5
+	bspc desktop next -f
 
 # multimedia
+XF86AudioStop
+	playerctl play-pause
+
 XF86AudioPlay
-	spt playback --toggle
+	playerctl -i spotifyd play-pause
 XF86AudioNext
-	spt playback --next
+	playerctl -i spotifyd next
 XF86AudioPrev
-	spt playback --previous
+	playerctl -i spotifyd previous
+
+shift + XF86AudioPlay
+	playerctl -p spotifyd play-pause
+shift + XF86AudioNext
+	playerctl -p spotifyd next
+shift + XF86AudioPrev
+	playerctl -p spotifyd previous
+
 XF86AudioRaiseVolume
 	pulsemixer --change-volume +1
 XF86AudioLowerVolume
@@ -20,27 +33,27 @@ XF86AudioMute
 super + Return
 	kitty
 
+# receptacle
+super + shift + Return
+	bspc node -i
+
 # program launcher
 super + Tab
 	rofi -run-list-command "zsh ~/.config/rofi/list-aliases.sh" -run-command "zsh -i -c '\{cmd\}'" -show run
 
-super + shift + Tab
+super + Escape
 	rofi -show power-menu -modi power-menu:"rofi-power-menu --no-symbols"
 
 alt + Tab
 	rofi -show window
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+# restart sxhkd and bspwm:
+super + r
+	pkill -USR1 -x sxhkd && bspc wm -r
 
-#
-# bspwm hotkeys
-#
-
-# quit/restart bspwm
-super + {q,r}
-	bspc {quit,wm -r}
+# quit bspwm
+super + q
+	bspc quit
 
 # close and kill
 super + {_,shift + }w
