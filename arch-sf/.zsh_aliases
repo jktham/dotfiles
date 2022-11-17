@@ -1,0 +1,7 @@
+alias sudo="sudo "
+alias la="ls -a"
+alias kn="kitty --detach nnn -aeH -P p"
+alias chrome="google-chrome-stable --force-device-scale-factor=1.5 --force-dark-mode --enable-features=WebUIDarkMode"
+alias pipes="pipes.sh -p 6 -r 30000"
+alias eth-vpn="sudo openconnect --server=sslvpn.ethz.ch --user=jotham@student-net.ethz.ch --authgroup=student-net"
+
