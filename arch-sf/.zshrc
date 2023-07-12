@@ -16,5 +16,7 @@ bindkey "^[[3~" delete-char
 
 export EDITOR=vim
 
-export NNN_PLUG="p:preview-tui"
+export NNN_PLUG="p:preview-tui;s:suedit"
 export NNN_FIFO=/tmp/nnn.fifo
+export _JAVA_AWT_WM_NONREPARENTING=1
+

@@ -33,6 +33,10 @@ XF86MonBrightnessDown
 	xbacklight -dec 10
 XF86MonBrightnessUp
 	xbacklight -inc 10
+shift + XF86MonBrightnessDown
+	xbacklight -dec 1
+shift + XF86MonBrightnessUp
+	xbacklight -inc 1
 
 # terminal emulator
 super + Return

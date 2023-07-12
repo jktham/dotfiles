@@ -36,9 +36,13 @@ fi
 picom &
 kitty -T "welcome" sh -c "neofetch; zsh" &
 
-xinput set-prop 8 336 1
-xinput set-prop 8 333 20
-xinput set-prop 8 313 1
+#xinput set-prop "Microsoft Surface Type Cover Touchpad" 336 1
+#xinput set-prop "Microsoft Surface Type Cover Touchpad" 333 20
+#xinput set-prop "Microsoft Surface Type Cover Touchpad" 313 1
+#xinput set-prop "Microsoft Surface Type Cover Touchpad" 185 2 0 0 0 2 0 0 0 1
+#xinput set-prop "Microsoft Surface Type Cover Touchpad" 330 0 1
+xinput set-prop "Microsoft Surface Type Cover Touchpad" 344 1
+xinput set-prop "Microsoft Surface Type Cover Touchpad" 315 1
 
 sxhkd &
 exec bspwm
